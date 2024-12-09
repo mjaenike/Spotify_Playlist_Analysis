@@ -1,10 +1,13 @@
 # How Music Changes Throughout the Day
 **How do people's listening habits change based on the time of day?**
 
-## **Project Overview:**
-This project collects data from the Spotify API on playlists; it looks to playlists with names that reference a specific time of day (e.g. 'Morning Wakeup', 'Afternoon Vibes', 'Night Chill') and explores the genres of artists in their tracklists. The project examines playlist popularity (based on followers) and the genres of artists featured in these playlists.
+<img src="images/Spotify_Playlist_Collage.png" alt="Spotify playlists by time of day" width="400"/>
+Spotify playlists by time of day (Mia Jaenike, Canva).
 
-The goal is to uncover patterns in listening habits—whether specific genres or moods align with different times of the day. Initially, I planned to look at specific audio features of tracks; the Spotify API was narrowed to no longer include this endpoint, so I moved to exploring the genres of these playlists instead.
+## **Project Overview:**
+This project collects data from the Spotify API on playlists. It looks to playlists with names or descriptions that reference a specific time of day (e.g., 'Morning Wakeup', 'Afternoon Vibes', 'Night Chill') and explores their popularity and the genres of artists in their tracklists.
+
+The goal is to uncover patterns in listening habits—whether specific genres align with different times of the day. Initially, I planned to look at specific audio features of tracks; the Spotify API was narrowed to no longer include this endpoint, so I decided to explore the genres of these playlists instead.
 
 The findings provide insights into how music listening habits may reflect daily routines or mood changes.
 
@@ -15,21 +18,16 @@ The findings provide insights into how music listening habits may reflect daily 
    conda activate <your_environment_name>
    ```
 
-   Replace <your_environment_name> with the name of your existing environment.
-
 2. If you prefer to create a new Conda environment for this project:
     ```bash
     conda create -n spotify_env python=3.12.4
     conda activate spotify_env
     ```
 
-#### Step 2: Install Required Packages
-To install the packages manually,
+#### Step 2: Install Required Dependencies
+To install the packages, use the [requirements.txt](requirements.txt) located in the repository
 ```bash
-conda install pandas
-conda install -c conda-forge dotenv
-pip install requests
-pip install lets-plot
+pip install -r requirements.txt
 ```
 
 #### Step 3: Set the .ipynb Kernel
@@ -52,7 +50,7 @@ This project requires Spotify API credentials (Client ID and Client Secret) to a
 #### Step 1: Obtain Spotify API Credentials
 1. Go to [Spotify for Developers](https://developer.spotify.com).
 2. Log in and navigate to the **Dashboard**.
-3. Create a new app by clicking "Create an App" and filling out the form.
+3. Create a new app by clicking "Create an App" and completing the form.
 4. Copy the **Client ID** and **Client Secret** from the app's dashboard.
 
 #### Step 2: Save Credentials in the `.env` File
@@ -63,7 +61,7 @@ This project requires Spotify API credentials (Client ID and Client Secret) to a
    SPOTIFY_CLIENT_SECRET=<your_client_secret>
    ```
 
-**NB:** The .env file is ignored by Git using .gitignore to ensure your credentials are not shared publicly.
+**NB:** The .env file is ignored by Git using .gitignore to ensure the credentials are not shared publicly.
 
 #### How the Credentials Are Used
 The project scripts use the credentials to authenticate with the Spotify API using a custom function get_spotify_token, located in Functions.py. This function:
@@ -74,41 +72,29 @@ The project scripts use the credentials to authenticate with the Spotify API usi
 Before running any code, ensure the following Python packages are installed and loaded:
 
 **Required Packages:**
-- `pandas`: For data manipulation and analysis.
-- `sqlite3`: For database operations.
-- `spotipy`: For interacting with the Spotify API.
-- `dotenv`: For securely managing environment variables.
-- `os`: For file system operations.
-- `time`: For managing rate limits with delays.
-- `lets-plot`: For data visualizations.
+Ensure the [requirements.txt](requirements.txt) file has been installed via pip.
 
-**Installation Instructions:**
-Run the following command to install all necessary packages:
-```bash
-pip install pandas spotipy python-dotenv lets-plot
-```
-
-1. **Data Collection (Notebook 1):**
+1. **[Data Collection (Notebook 1):](code/NB01%20-%20Data%20Collection.ipynb)**
    - Open `code/NB01 - Data Collection.ipynb`.
-   - Ensure the raw data directory (`data/raw/`) exists. If not, create it:
+   - Ensure the raw data directory (`../data/raw/`) exists. If not, create it:
      ```bash
-     mkdir -p data/raw
+     mkdir -p ../data/raw
      ```
    - Execute the notebook step-by-step. This notebook:
      - Authenticates with Spotify using credentials stored in `.env`.
      - Collects playlists data related to specified time periods (e.g., morning, afternoon).
-     - Saves the collected data as JSON files in the `data/raw/` directory.
+     - Saves the collected data as JSON files in the `../data/raw/` directory.
 
 Due to measures taken to avoid hitting Spotify's rate limit, the final code block of this notebook takes a long time to run (~13 mins)
 
-2. **Data Processing (Notebook 2):**
+2. **[Data Processing (Notebook 2):](code/NB02%20-%20Data%20Processing.ipynb)**
    - Open `code/NB02 - Data Processing.ipynb`.
    - Execute the notebook to:
-     - Load raw JSON files from `data/raw/`.
+     - Load raw JSON files from `../data/raw/`.
      - Clean and process the data into structured tables.
-     - Save the processed data as a SQLite database in the `data/` directory.
+     - Save the processed data as a SQLite database in the `../data/` directory.
 
-3. **Data Visualization (Notebook 3):**
+3. **[Data Visualization (Notebook 3):](code/NB03%20-%20Data%20Visualization.ipynb)**
    - Open `code/NB03 - Data Visualization.ipynb`.
    - Execute the notebook to:
      - Load processed data from the SQLite database.
@@ -117,14 +103,16 @@ Due to measures taken to avoid hitting Spotify's rate limit, the final code bloc
 ## **References**
 For obtaining colourblind-friendly hex codes, I referred to [The Node's Data Visualization with Flying Colors](https://thenode.biologists.com/data-visualization-with-flying-colors/research/); I used the Muted qualitative color scheme.
 
-[Tooltips](https://lets-plot.org/python/pages/tooltips.html)
+To include tooltips in the lets-plot visualizations, I referred to the example section of the [lets-plot documentation on using tooltips](https://lets-plot.org/python/pages/tooltips.html).
+
+I used relative paths in this README, informed by [GitHub markdown documentation on relative links](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#relative-links).
+
+For adding a folder for the Spotify playlist image collage, I used referred to [this Medium article](https://medium.com/@gl7526/making-a-folder-of-images-for-your-github-readme-2c6cd42e1439) and [this Geeks for Geeks guide](https://www.geeksforgeeks.org/how-to-resize-image-in-github-using-markdown/).
+
+Additionally, I used Claude 3.5 Sonnet to assist with creating lets-plot visualizations and formatting them. Specifically, it assisted with the arguments given to ggplot (mostly pertaining to color schemes and text placement). I also used Sonnet to assist in the creation of my requirements.txt file.
 
 **AUTHOR:** Mia Jaenike
 
 **CANDIDATE NUMBER:** 40141
-
-**\#TODO:**
-
-- [ ] Add a small little image here to illustrate this project
 
 ***NB***: I was granted an extension through 20:00 December 10th, 2024.
