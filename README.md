@@ -1,6 +1,9 @@
 # How Music Changes Throughout the Day
 **How do people's listening habits change based on the time of day?**
 
+<img src="images/Spotify_Playlist_Collage.png" alt="Spotify playlists by time of day" width="400"/>
+Spotify playlists by time of day (Mia Jaenike, Canva).
+
 ## **Project Overview:**
 This project collects data from the Spotify API on playlists. It looks to playlists with names that reference a specific time of day (e.g., 'Morning Wakeup', 'Afternoon Vibes', 'Night Chill') and explores the genres of artists in their tracklists. The project examines playlist popularity (based on followers) and the genres of artists featured in these playlists.
 
@@ -106,16 +109,12 @@ To include tooltips in the lets-plot visualizations, I referred to the example s
 
 I used relative paths in this README, informed by [GitHub markdown documentation on relative links](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#relative-links).
 
-For adding a folder for the spotify playlist image collage, I used referred to [this Medium article](https://medium.com/@gl7526/making-a-folder-of-images-for-your-github-readme-2c6cd42e1439) and [this GitHub markdown documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#images).
+For adding a folder for the Spotify playlist image collage, I used referred to [this Medium article](https://medium.com/@gl7526/making-a-folder-of-images-for-your-github-readme-2c6cd42e1439) and [this Geeks for Geeks guide](https://www.geeksforgeeks.org/how-to-resize-image-in-github-using-markdown/).
 
 Additionally, I used Claude 3.5 Sonnet to assist with creating lets-plot visualizations and formatting them. Specifically, it assisted with the arguments given to ggplot (mostly pertaining to color schemes and text placement). I also used Sonnet to assist in the creation of my requirements.txt file.
 
 **AUTHOR:** Mia Jaenike
 
 **CANDIDATE NUMBER:** 40141
-
-**\#TODO:**
-
-- [ ] Add a small little image here to illustrate this project
 
 ***NB***: I was granted an extension through 20:00 December 10th, 2024.
