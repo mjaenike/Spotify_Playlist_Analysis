@@ -5,9 +5,9 @@
 Spotify playlists by time of day (Mia Jaenike, Canva).
 
 ## **Project Overview:**
-This project collects data from the Spotify API on playlists. It looks to playlists with names that reference a specific time of day (e.g., 'Morning Wakeup', 'Afternoon Vibes', 'Night Chill') and explores the genres of artists in their tracklists. The project examines playlist popularity (based on followers) and the genres of artists featured in these playlists.
+This project collects data from the Spotify API on playlists. It looks to playlists with names or descriptions that reference a specific time of day (e.g., 'Morning Wakeup', 'Afternoon Vibes', 'Night Chill') and explores their popularity and the genres of artists in their tracklists.
 
-The goal is to uncover patterns in listening habits—whether specific genres or moods align with different times of the day. Initially, I planned to look at specific audio features of tracks; the Spotify API was narrowed to no longer include this endpoint, so I decided to explore the genres of these playlists instead.
+The goal is to uncover patterns in listening habits—whether specific genres align with different times of the day. Initially, I planned to look at specific audio features of tracks; the Spotify API was narrowed to no longer include this endpoint, so I decided to explore the genres of these playlists instead.
 
 The findings provide insights into how music listening habits may reflect daily routines or mood changes.
 
@@ -17,8 +17,6 @@ The findings provide insights into how music listening habits may reflect daily 
    ```bash
    conda activate <your_environment_name>
    ```
-
-   Replace <your_environment_name> with the name of your existing environment.
 
 2. If you prefer to create a new Conda environment for this project:
     ```bash
@@ -78,23 +76,23 @@ Ensure the [requirements.txt](requirements.txt) file has been installed via pip.
 
 1. **[Data Collection (Notebook 1):](code/NB01%20-%20Data%20Collection.ipynb)**
    - Open `code/NB01 - Data Collection.ipynb`.
-   - Ensure the raw data directory (`data/raw/`) exists. If not, create it:
+   - Ensure the raw data directory (`../data/raw/`) exists. If not, create it:
      ```bash
-     mkdir -p data/raw
+     mkdir -p ../data/raw
      ```
    - Execute the notebook step-by-step. This notebook:
      - Authenticates with Spotify using credentials stored in `.env`.
      - Collects playlists data related to specified time periods (e.g., morning, afternoon).
-     - Saves the collected data as JSON files in the `data/raw/` directory.
+     - Saves the collected data as JSON files in the `../data/raw/` directory.
 
 Due to measures taken to avoid hitting Spotify's rate limit, the final code block of this notebook takes a long time to run (~13 mins)
 
 2. **[Data Processing (Notebook 2):](code/NB02%20-%20Data%20Processing.ipynb)**
    - Open `code/NB02 - Data Processing.ipynb`.
    - Execute the notebook to:
-     - Load raw JSON files from `data/raw/`.
+     - Load raw JSON files from `../data/raw/`.
      - Clean and process the data into structured tables.
-     - Save the processed data as a SQLite database in the `data/` directory.
+     - Save the processed data as a SQLite database in the `../data/` directory.
 
 3. **[Data Visualization (Notebook 3):](code/NB03%20-%20Data%20Visualization.ipynb)**
    - Open `code/NB03 - Data Visualization.ipynb`.
