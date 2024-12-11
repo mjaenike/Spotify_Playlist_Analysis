@@ -109,10 +109,8 @@ I used relative paths in this README, informed by [GitHub markdown documentation
 
 For adding a folder for the Spotify playlist image collage, I used referred to [this Medium article](https://medium.com/@gl7526/making-a-folder-of-images-for-your-github-readme-2c6cd42e1439) and [this Geeks for Geeks guide](https://www.geeksforgeeks.org/how-to-resize-image-in-github-using-markdown/).
 
-Additionally, I used Claude 3.5 Sonnet to assist with creating lets-plot visualizations and formatting them. Specifically, it assisted with the arguments given to ggplot (mostly pertaining to color schemes and text placement). I also used Sonnet to assist in the creation of my requirements.txt file.
+***
 
-**AUTHOR:** Mia Jaenike
-
-**CANDIDATE NUMBER:** 40141
-
-***NB***: I was granted an extension through 20:00 December 10th, 2024.
+**AUTHOR:** Mia Jaenike<br>
+**CONTACT:** miaajaenike@gmail.com<br>
+**LAST UPDATED:**: 2024-12-11
