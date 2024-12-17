@@ -6,6 +6,16 @@ Spotify playlists by time of day (Mia Jaenike, Canva).
 
 ---
 
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Recreating the Python Environment](#recreating-the-python-environment)
+- [Obtaining Spotify API Credentials](#obtaining-spotify-api-credentials)
+- [How to Run the Code](#how-to-run-the-code)
+- [Results](#results)
+- [References](#references)
+
+---
+
 ## **Project Overview:**
 This project collects data from the Spotify API on playlists. It looks to playlists with names or descriptions that reference a specific time of day (e.g., 'Morning Wakeup', 'Afternoon Vibes', 'Night Chill') and explores their popularity and the genres of artists in their tracklists.
 
